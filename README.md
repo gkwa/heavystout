@@ -13,6 +13,8 @@ Usage:
 ```bash
 # setup
 brew install shfmt guilhem/homebrew-tap/bump
+
+# create test scenarios
 pip install git+https://github.com/taylormonacelli/heavystout
 heavystout
 
