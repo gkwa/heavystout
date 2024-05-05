@@ -18,11 +18,11 @@ brew install shfmt guilhem/homebrew-tap/bump
 pip install git+https://github.com/taylormonacelli/heavystout
 heavystout
 
-# fails with error="can't open git: repository does not exist"
-./t005.sh
-
 # succeeds, happy path
 ./t010.sh
+
+# fails with error="can't open git: repository does not exist"
+./t005.sh
 
 # fails from error="is dirty"
 ./t020.sh
