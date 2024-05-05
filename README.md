@@ -12,7 +12,7 @@ Usage:
 
 ```bash
 # setup
-brew install shfmt guilhem/bump
+brew install shfmt guilhem/homebrew-tap/bump
 pip install git+https://github.com/taylormonacelli/heavystout
 heavystout
 
