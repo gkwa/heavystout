@@ -22,7 +22,7 @@ heavystout
 ./t010.sh
 
 # fails with error="can't open git: repository does not exist"
-./t005.sh
+./t015.sh
 
 # fails from error="is dirty"
 ./t020.sh
