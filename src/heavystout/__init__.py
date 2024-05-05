@@ -8,6 +8,7 @@ __project_name__ = "heavystout"
 def main() -> int:
     templates = [
         pathlib.Path("t010.sh.j2"),
+        pathlib.Path("t005.sh.j2"),
         pathlib.Path("t020.sh.j2"),
         pathlib.Path("t030.sh.j2"),
     ]
