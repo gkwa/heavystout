@@ -5,6 +5,7 @@ Practice using [guilhem/bump](https://github.com/guilhem/bump?tab=readme-ov-file
 Usage:
 
 ```bash
+brew install shfmt
 pip install git+https://github.com/taylormonacelli/heavystout
 heavystout
 
