@@ -1,7 +1,10 @@
 {% extends 'base.sh.j2' %}
 
 {% block description %}
-# Example: this works as expected, no errors.  This is happy path.
+# Example: happy path:
+# put files in git repo
+# commit files and leave no dirty files laying around
+# git tag current HEAD
 {% endblock %}
 
-{% block git_show_others %}{% endblock %}
+{% block dirty_list %}{% endblock %}

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Example: you guilhem/bump requires git tag but you don't have any tags.
+# Example: forget to git tag.
 
 set -x
 set -e
@@ -24,13 +24,13 @@ EOF
 
 go mod init go.company.com/mytest
 
-git init
-git add -A
-git commit -am Intial
+git init && git add -A && git commit -am Intial
 
 go build
 
 mv mytest $bindir/mytest
+
+$bindir/mytest
 
 bump patch
 

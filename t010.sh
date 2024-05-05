@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-# Example: this works as expected, no errors.  This is happy path.
+# Example: happy path:
+# put files in git repo
+# commit files and leave no dirty files laying around
+# git tag current HEAD
 
 set -x
 set -e
@@ -24,15 +27,15 @@ EOF
 
 go mod init go.company.com/mytest
 
-git init
-git add -A
-git commit -am Intial
-
-git tag v0.0.1
+git init && git add -A && git commit -am Intial
 
 go build
 
+git tag v0.0.1
+
 mv mytest $bindir/mytest
+
+$bindir/mytest
 
 bump patch
 

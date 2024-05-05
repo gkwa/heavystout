@@ -1,8 +1,9 @@
 {% extends 'base.sh.j2' %}
 
 {% block description %}
-# Example: you guilhem/bump requires git tag but you don't have any tags.
+# Example: forget to git tag.
 {% endblock %}
 
+{% block dirty_list %}{% endblock %}
+
 {% block git_tag %}{% endblock %}
-{% block git_show_others %}{% endblock %}

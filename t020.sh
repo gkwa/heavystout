@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Example: your current git repo is dirty in this case because of untracked files.
+# Example: forget to move dirty files out of git repo.
 
 set -x
 set -e
@@ -22,13 +22,13 @@ EOF
 
 go mod init go.company.com/mytest
 
-git init
-git add -A
-git commit -am Intial
+git init && git add -A && git commit -am Intial
+
+go build
 
 git tag v0.0.1
 
-go build
+./mytest
 
 bump patch
 

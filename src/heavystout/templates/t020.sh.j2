@@ -1,10 +1,13 @@
 {% extends 'base.sh.j2' %}
 
 {% block description %}
-# Example: your current git repo is dirty in this case because of untracked files.
+# Example: forget to move dirty files out of git repo.
 {% endblock %}
 
-{% block git_clean %}{% endblock %}
-{% block create_tmp_bin_path %}{% endblock %}
-{% block git_needs_bin_path %}{% endblock %}
-{% block git_clean_tmp_bin_path %}{% endblock %}
+{% block dirty_container %}{% endblock %}
+{% block dirty_mkdir %}{% endblock %}
+{% block dirty_mv %}{% endblock %}
+{%- block run %}
+./mytest
+{% endblock %}
+{% block dirty_clean %}{% endblock %}

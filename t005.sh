@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Example: code is not in git repo.
+# Example: forget that code must be in git repo.
 
 set -x
 set -e
@@ -23,6 +23,8 @@ EOF
 go mod init go.company.com/mytest
 
 go build
+
+./mytest
 
 bump patch
 

@@ -12,8 +12,8 @@ r=$(date +%s)
 myproject="/tmp/myproject-${r}"
 mkdir $myproject && cd $myproject
 
-{% block git_needs_bin_path %}
-{% block create_tmp_bin_path %}
+{% block dirty_container %}
+{% block dirty_mkdir %}
 bindir="${myproject}-bindir" && mkdir -p $bindir
 {% endblock %}
 {% endblock %}
@@ -30,27 +30,31 @@ EOF
 
 go mod init go.company.com/mytest
 
-{%block git_init %}
-git init
-git add -A
-git commit -am Intial
-{% endblock %}
-
-{%block git_tag %}
-git tag v0.0.1
+{% block git_init %}
+git init && git add -A && git commit -am Intial
 {% endblock %}
 
 go build
 
-{%block git_clean %}mv mytest $bindir/mytest{% endblock %}
+{% block git_tag %}
+git tag v0.0.1
+{% endblock %}
+
+{%- block dirty_mv %}
+mv mytest $bindir/mytest
+{% endblock %}
+
+{%- block run %}
+$bindir/mytest
+{% endblock %}
 
 bump patch
 
-{%block git_show_others %}
+{% block dirty_list %}
 git ls-files . --exclude-standard --others
 {% endblock %}
 
 rm -rf $myproject
-{%- block git_clean_tmp_bin_path %}
+{%- block dirty_clean %}
 rm -rf $bindir
 {% endblock %}
