@@ -17,7 +17,7 @@ def main() -> int:
         script.write_text(main2.render_template(tpl.name))
         script.chmod(0o777)
 
-    for script in pathlib.Path(".").glob("*.sh"):
-        main2.run_cmd(f"shfmt -w -s -i 4 {script}")
+    scripts = list(pathlib.Path(".").glob("*.sh"))
+    main2.run_cmd(f"shfmt -w -s -i 4 {' '.join([str(path) for path in scripts])}")
 
     return 0

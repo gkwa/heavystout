@@ -6,11 +6,11 @@ set -x
 set -e
 set -u
 
-d=$(mktemp -d /tmp/myproject-XXXX)
-cd $d
+r=$(date +%s)
+myproject="/tmp/myproject-${r}"
+mkdir $myproject && cd $myproject
 
-tmpbin="${d}-tmpbin"
-mkdir $tmpbin
+bindir="${myproject}-bindir" && mkdir -p $bindir
 
 cat >main.go <<EOF
 package main
@@ -32,9 +32,9 @@ git tag v0.0.1
 
 go build
 
-mv mytest $tmpbin/mytest
+mv mytest $bindir/mytest
 
 bump patch
 
-rm -rf $d
-rm -rf $tmpbin
+rm -rf $myproject
+rm -rf $bindir
