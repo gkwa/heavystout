@@ -4,7 +4,6 @@ set -x
 set -e
 set -u
 
-
 d=$(mktemp -d /tmp/myproject-XXXX)
 trash="${d}-trash"
 
@@ -28,18 +27,12 @@ git init
 git add -A
 git commit -am Intial
 
-{%block git_tag %}
 git tag v0.0.1
-{% endblock %}
 
 go build
 
-{%block git_clean %}mv mytest $trash/mytest{% endblock %}
-
 bump patch
 
-{%block git_show_others %}
 git ls-files . --exclude-standard --others
-{% endblock %}
 
 rm -rf $d $trash

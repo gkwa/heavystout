@@ -1,5 +1,12 @@
 # heavystout
+Practice using [guilhem/bump](https://github.com/guilhem/bump?tab=readme-ov-file#bump) to bump my golang app versions.
 
-## Learning jinja2 template inheritance
 
-https://jinja.palletsprojects.com/en/latest/templates/#template-inheritance
+Usage:
+
+```bash
+heavystout
+./t010.sh
+./t020.sh
+./t030.sh
+```
