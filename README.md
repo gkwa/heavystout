@@ -19,7 +19,7 @@ heavystout
 # fails with error="can't open git: repository does not exist"
 ./t005.sh
 
-# happy path
+# succeeds, happy path
 ./t010.sh
 
 # fails from error="is dirty"
