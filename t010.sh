@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Example: this works as expected, no errors.  This is happy path.
+
 set -x
 set -e
 set -u

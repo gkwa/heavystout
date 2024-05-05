@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Example: your current git repo is dirty in this case because of untracked files.
+
 set -x
 set -e
 set -u

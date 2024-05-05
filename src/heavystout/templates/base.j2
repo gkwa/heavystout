@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+{% block description %}
+# base
+{% endblock %}
+
 set -x
 set -e
 set -u
-
 
 d=$(mktemp -d /tmp/myproject-XXXX)
 trash="${d}-trash"

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Example: you guilhem/bump requires git tag but you don't have any tags.
+
 set -x
 set -e
 set -u

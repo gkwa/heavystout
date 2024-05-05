@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Example: code is not in git repo.
+
 set -x
 set -e
 set -u
