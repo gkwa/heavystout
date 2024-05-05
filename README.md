@@ -5,7 +5,7 @@ Practice using [guilhem/bump](https://github.com/guilhem/bump?tab=readme-ov-file
 Usage:
 
 ```bash
-rye sync
+pip install git+https://github.com/taylormonacelli/heavystout
 heavystout
 
 # happy path
