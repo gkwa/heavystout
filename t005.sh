@@ -7,7 +7,6 @@ set -e
 set -u
 
 d=$(mktemp -d /tmp/myproject-XXXX)
-
 cd $d
 
 cat >main.go <<EOF

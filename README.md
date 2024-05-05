@@ -6,7 +6,7 @@ Usage:
 
 ```bash
 # setup
-brew install shfmt
+brew install shfmt guilhem/bump
 pip install git+https://github.com/taylormonacelli/heavystout
 heavystout
 

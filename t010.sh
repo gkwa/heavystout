@@ -7,11 +7,10 @@ set -e
 set -u
 
 d=$(mktemp -d /tmp/myproject-XXXX)
-
-trash="${d}-trash"
-mkdir $trash
-
 cd $d
+
+tmpbin="${d}-tmpbin"
+mkdir $tmpbin
 
 cat >main.go <<EOF
 package main
@@ -33,10 +32,9 @@ git tag v0.0.1
 
 go build
 
-mv mytest $trash/mytest
+mv mytest $tmpbin/mytest
 
 bump patch
 
 rm -rf $d
-
-rm -rf $trash
+rm -rf $tmpbin

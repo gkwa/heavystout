@@ -1,4 +1,4 @@
-{% extends 'base.j2' %}
+{% extends 'base.sh.j2' %}
 
 {% block description %}
 # Example: code is not in git repo.
@@ -8,5 +8,5 @@
 {% block git_init %}{% endblock %}
 {% block git_show_others %}{% endblock %}
 {% block git_tag %}{% endblock %}
-{% block needs_bin_path %}{% endblock %}
-{% block clean_tmp_bin_path %}{% endblock %}
+{% block git_needs_bin_path %}{% endblock %}
+{% block git_clean_tmp_bin_path %}{% endblock %}

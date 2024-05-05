@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 {% block description %}
-# base
+# desc should be overriden by child template
 {% endblock %}
 
 set -x
@@ -9,15 +9,14 @@ set -e
 set -u
 
 d=$(mktemp -d /tmp/myproject-XXXX)
-
-{% block needs_bin_path %}
-{% block create_tmp_bin_path %}
-trash="${d}-trash"
-mkdir $trash
-{% endblock %}
-{% endblock %}
-
 cd $d
+
+{% block git_needs_bin_path %}
+{% block create_tmp_bin_path %}
+tmpbin="${d}-tmpbin"
+mkdir $tmpbin
+{% endblock %}
+{% endblock %}
 
 cat >main.go <<EOF
 package main
@@ -43,7 +42,7 @@ git tag v0.0.1
 
 go build
 
-{%block git_clean %}mv mytest $trash/mytest{% endblock %}
+{%block git_clean %}mv mytest $tmpbin/mytest{% endblock %}
 
 bump patch
 
@@ -52,6 +51,6 @@ git ls-files . --exclude-standard --others
 {% endblock %}
 
 rm -rf $d
-{% block clean_tmp_bin_path %}
-rm -rf $trash
+{%- block git_clean_tmp_bin_path %}
+rm -rf $tmpbin
 {% endblock %}
