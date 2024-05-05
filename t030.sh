@@ -7,8 +7,8 @@ set -e
 set -u
 
 d=$(mktemp -d /tmp/myproject-XXXX)
-trash="${d}-trash"
 
+trash="${d}-trash"
 mkdir $trash
 
 cd $d
@@ -35,4 +35,4 @@ mv mytest $trash/mytest
 
 bump patch
 
-rm -rf $d $trash
+rm -rf $d

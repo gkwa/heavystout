@@ -10,6 +10,9 @@ brew install shfmt
 pip install git+https://github.com/taylormonacelli/heavystout
 heavystout
 
+# fails with error="can't open git: repository does not exist"
+./t005.sh
+
 # happy path
 ./t010.sh
 

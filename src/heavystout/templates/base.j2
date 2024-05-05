@@ -9,9 +9,13 @@ set -e
 set -u
 
 d=$(mktemp -d /tmp/myproject-XXXX)
-trash="${d}-trash"
 
+{% block needs_bin_path %}
+{% block create_tmp_bin_path %}
+trash="${d}-trash"
 mkdir $trash
+{% endblock %}
+{% endblock %}
 
 cd $d
 
@@ -47,4 +51,7 @@ bump patch
 git ls-files . --exclude-standard --others
 {% endblock %}
 
-rm -rf $d $trash
+rm -rf $d
+{% block clean_tmp_bin_path %}
+rm -rf $trash
+{% endblock %}

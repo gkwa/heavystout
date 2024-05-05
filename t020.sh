@@ -7,9 +7,6 @@ set -e
 set -u
 
 d=$(mktemp -d /tmp/myproject-XXXX)
-trash="${d}-trash"
-
-mkdir $trash
 
 cd $d
 
@@ -37,4 +34,4 @@ bump patch
 
 git ls-files . --exclude-standard --others
 
-rm -rf $d $trash
+rm -rf $d
