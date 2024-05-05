@@ -10,6 +10,8 @@ r=$(date +%s)
 myproject="/tmp/myproject-${r}"
 mkdir $myproject && cd $myproject
 
+bindir="${myproject}-bindir" && mkdir -p $bindir
+
 cat >main.go <<EOF
 package main
 

@@ -27,7 +27,6 @@ git init && git add -A && git commit -am Intial
 go build
 
 git tag v0.0.1
-
 ./mytest
 
 bump patch

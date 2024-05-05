@@ -12,10 +12,8 @@ r=$(date +%s)
 myproject="/tmp/myproject-${r}"
 mkdir $myproject && cd $myproject
 
-{% block dirty_container %}
 {% block dirty_mkdir %}
 bindir="${myproject}-bindir" && mkdir -p $bindir
-{% endblock %}
 {% endblock %}
 
 cat >main.go <<EOF
@@ -44,9 +42,7 @@ git tag v0.0.1
 mv mytest $bindir/mytest
 {% endblock %}
 
-{%- block run %}
-$bindir/mytest
-{% endblock %}
+{%- block run %}$bindir/mytest{% endblock %}
 
 bump patch
 

@@ -34,7 +34,6 @@ go build
 git tag v0.0.1
 
 mv mytest $bindir/mytest
-
 $bindir/mytest
 
 bump patch

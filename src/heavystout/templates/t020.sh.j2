@@ -4,10 +4,8 @@
 # Example: forget to move dirty files out of git repo.
 {% endblock %}
 
-{% block dirty_container %}{% endblock %}
 {% block dirty_mkdir %}{% endblock %}
 {% block dirty_mv %}{% endblock %}
-{%- block run %}
-./mytest
-{% endblock %}
 {% block dirty_clean %}{% endblock %}
+
+{%- block run %}./mytest{% endblock %}

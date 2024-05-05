@@ -4,14 +4,11 @@
 # Example: forget that code must be in git repo.
 {% endblock %}
 
-{% block dirty_container %}{% endblock %}
+{% block dirty_list %}{% endblock %}
 {% block dirty_mv %}{% endblock %}
-{%- block run %}
-./mytest
-{% endblock %}
-
 {% block dirty_clean %}{% endblock %}
 
 {% block git_init %}{% endblock %}
-{% block dirty_list %}{% endblock %}
 {% block git_tag %}{% endblock %}
+
+{%- block run %}./mytest{% endblock %}

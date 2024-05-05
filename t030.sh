@@ -29,7 +29,6 @@ git init && git add -A && git commit -am Intial
 go build
 
 mv mytest $bindir/mytest
-
 $bindir/mytest
 
 bump patch
